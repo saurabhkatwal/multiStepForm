@@ -1,0 +1,6 @@
+.form{
+    display:flex;
+    column-gap:80px;
+    justify-content: center;
+    min-width: 900px;
+}

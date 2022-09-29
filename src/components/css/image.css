@@ -1,3 +1,6 @@
+.image{
+    width: fit-content;
+}
 img{
-    width: 400px;
+    width: 300px;
 }

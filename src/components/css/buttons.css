@@ -1,0 +1,13 @@
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+.buttons button{
+    padding: 13px 20px;
+    background-color: dodgerblue;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px;
+    margin:0 10px;
+    cursor: pointer;
+}

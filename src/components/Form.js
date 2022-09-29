@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Image from './Image'
 import FormContent from './FormContent'
+import "./css/form.css"
 export default class Form extends Component {
     state={
         page:0,
@@ -33,7 +34,7 @@ export default class Form extends Component {
   render() {
     return (
       <div className='form'>
-        <Image name={this.state.images[this.state.page]}/>
+        <Image state={this.state}name={this.state.images[this.state.page]}/>
         <FormContent prevBtnHandler={this.prevBtnHandler} nextBtnHandler={this.nextBtnHandler} formData={this.state.formData} page={this.state.page}/>
       </div>
     )

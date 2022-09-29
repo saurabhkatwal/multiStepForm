@@ -5,10 +5,15 @@ import Buttons from './Buttons'
 import SignUpInfo from './SignUpInfo'
 import CheckBoxInfo from './CheckBoxInfo'
 import MessageInfo from './MessageInfo'
+import Title from './Title'
+import "./css/formcontent.css"
 export default class FormContent extends Component {
+    state={
+        titles:["SignUp","Message","Checkbox"]
+    }
     pageDisplay=()=>{
         if(this.props.page==0){
-            return <SignUpInfo formData={this.props.formData}/>
+            return <SignUpInfo formData={this.props.formData} />
         }
         else if(this.props.page==1){
             return <MessageInfo formData={this.props.formData}/>
@@ -21,6 +26,7 @@ export default class FormContent extends Component {
     return (
       <div className='form-content'>
         <Header page={this.props.page}/>
+        <Title title={this.state.titles[this.props.page]} page={this.props.page}/>
         <Content>{this.pageDisplay()}</Content>
         <Buttons prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>
       </div>

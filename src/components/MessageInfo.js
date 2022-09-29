@@ -10,11 +10,11 @@ export default class MessageInfo extends Component {
         </div>
         <div className="choices">
             <div className="choice1">
-            <input type="radio" name="" id="" />
+            <input type="radio" name="choice" id="" />
             <label htmlFor="">The number 1 choice</label>
             </div>
             <div className="choice2">
-                <input type="radio" name="" id="" />
+                <input type="radio" name="choice" id="" />
                 <label htmlFor="">The number 2 choice</label>
             </div>
         </div>

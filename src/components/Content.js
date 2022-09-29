@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-
+import "./css/content.css"
 export default class Content extends Component {
     
   render() {
     return (
-      <div>
+      <div className='content'>
         {this.props.children}
       </div>
     )

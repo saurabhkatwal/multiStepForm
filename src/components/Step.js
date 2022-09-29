@@ -18,7 +18,10 @@ export default class Step extends Component {
   render() {
     return (
       <div className="step">
-        <p><span style={this.tempFn()}>{this.useData()} </span>{this.props.title}</p>
+        <div>
+            <span style={this.tempFn()}>{this.useData()} </span>
+            <p>{this.props.title}</p>
+        </div>
       </div>
     )
   }
