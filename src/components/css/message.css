@@ -1,0 +1,13 @@
+.message.inputDiv{
+    margin-bottom: 20px;
+}
+.choices{
+    display: flex;
+    column-gap: 20px;
+}
+.choice input{
+    margin-right: 10px;
+}
+textarea{
+    padding: 10px;
+}
