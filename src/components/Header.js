@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     return (
       <div className='header'>
-        <Steps/>
+        <Steps page={this.props.page}/>
       </div>
     )
   }

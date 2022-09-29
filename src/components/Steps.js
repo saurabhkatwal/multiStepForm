@@ -10,7 +10,7 @@ export default class Steps extends Component {
     return (
       <div className="steps">
         {this.state.stepTitles.map((stepTitle,index)=>{
-          return <Step key={uuidv4()}title={stepTitle} number={index}/> 
+          return <Step key={uuidv4()}title={stepTitle} number={index} page={this.props.page}/> 
         })}
       </div>
     )

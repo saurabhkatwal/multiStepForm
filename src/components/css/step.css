@@ -1,0 +1,9 @@
+.step span{
+    color: #777;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}

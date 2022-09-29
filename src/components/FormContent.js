@@ -20,7 +20,7 @@ export default class FormContent extends Component {
   render() {
     return (
       <div className='form-content'>
-        <Header/>
+        <Header page={this.props.page}/>
         <Content>{this.pageDisplay()}</Content>
         <Buttons prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>
       </div>
