@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./css/message.css"
+import Buttons from './Buttons'
 export default class MessageInfo extends Component {
  
   render() {
@@ -19,6 +20,8 @@ export default class MessageInfo extends Component {
                 <label htmlFor="choiceTwo">The number 2 choice</label>
             </div>
         </div>
+        <Buttons submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>        
+
       </div>
     )
   }

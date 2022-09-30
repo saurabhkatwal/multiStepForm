@@ -13,13 +13,13 @@ export default class FormContent extends Component {
     }
     pageDisplay=()=>{
         if(this.props.page==0){
-            return <SignUpInfo formData={this.props.formData} changeData={this.props.changeData}/>
+            return <SignUpInfo formData={this.props.formData} changeData={this.props.changeData} submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>
         }
         else if(this.props.page==1){
-            return <MessageInfo formData={this.props.formData} changeData={this.props.changeData}/>
+            return <MessageInfo formData={this.props.formData} changeData={this.props.changeData} submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>
         }
         else if(this.props.page==2){
-            return <CheckBoxInfo formData={this.props.formData} changeData={this.props.changeData}/>
+            return <CheckBoxInfo formData={this.props.formData} changeData={this.props.changeData} submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>
         }
     }
     // changeState=()=>{
@@ -32,8 +32,7 @@ export default class FormContent extends Component {
       <div className='form-content'>
         <Header onClick={this.changeState} page={this.props.page}/>
         <Title title={this.state.titles[this.props.page]} page={this.props.page}/>
-        <Content >{this.pageDisplay()}</Content>
-        <Buttons submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>
+        <Content>{this.pageDisplay()}</Content>
       </div>
     )
   }

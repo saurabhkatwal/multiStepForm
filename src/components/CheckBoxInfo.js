@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./css/checkbox.css"
+import Buttons from './Buttons'
 export default class CheckBoxInfo extends Component {
   state={
     background:"grey"
@@ -32,6 +33,8 @@ export default class CheckBoxInfo extends Component {
             <label htmlFor="choose">Let me click on this checkbox and choose some cool stuff</label>
           </div>
         </div>
+        <Buttons submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>        
+
       </div>
     )
   }

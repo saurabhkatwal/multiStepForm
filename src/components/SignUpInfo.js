@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./css/signup.css"
+import Buttons from './Buttons'
 export default class SignUpInfo extends Component {
   render() {
     return (
@@ -23,7 +24,8 @@ export default class SignUpInfo extends Component {
         <div className="address inputDiv">
         <label htmlFor="">Address</label>
         <input type="text" name="" id=""onChange={(e)=>this.props.changeData(e,"address",e.target.value)} value={this.props.formData.address}/>    
-        </div>        
+        </div>
+        <Buttons submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>        
       </div>
     )
   }
