@@ -8,11 +8,12 @@ export default class Buttons extends Component {
             }
         }
     }
+    
   render() {
     return (
       <div className='buttons'>
         <button style={this.btnStyleHandler()} onClick={this.props.prevBtnHandler}>back</button>
-        <button onClick={this.props.nextBtnHandler}>{this.props.page===2?("Submit"):("Next Step")}</button>
+        <button onClick={(this.props.page<=2)?(this.props.nextBtnHandler):(this.props.submitHandler)}>{(this.props.page===2?("Submit"):("Next Step"))}</button>
       </div>
     )
   }

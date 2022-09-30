@@ -25,7 +25,7 @@ export default class Form extends Component {
     nextBtnHandler=()=>{
         this.setState(prevState=>{
             return {
-                page:((prevState.page+1)<=2)?(prevState.page+1):(prevState.page)
+                page:((prevState.page+1)<=3)?(prevState.page+1):(prevState.page)
             }
         })
     }
@@ -39,12 +39,31 @@ export default class Form extends Component {
             }
         })
     }
+    submitHandler(e){
+        if(e.target.innerText==="Submit"){
+            console.log("yes");
+        }
+        else{
+            console.log("no");
+        }
+      }
   render() {
-    return (
-      <div className='form'>
-        <Image state={this.state}name={this.state.images[this.state.page]}/>
-        <FormContent changeData={this.changeData}state={this.state} prevBtnHandler={this.prevBtnHandler} nextBtnHandler={this.nextBtnHandler} formData={this.state} page={this.state.page}/>
-      </div>
-    )
+   { if(this.state.page>2){
+        return (
+            <div className='modal'>
+                <h1>form submitted successfully</h1>
+            </div>
+        )
+    }
+    else{
+        return (
+            <div className='form'>
+              <Image state={this.state}name={this.state.images[this.state.page]}/>
+              <FormContent submitHandler={this.submitHandler} changeData={this.changeData}state={this.state} prevBtnHandler={this.prevBtnHandler} nextBtnHandler={this.nextBtnHandler} formData={this.state} page={this.state.page}/>
+            </div>
+          )
+    }
+    
   }
+}
 }
