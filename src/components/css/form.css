@@ -2,8 +2,8 @@
     display:flex;
     column-gap:80px;
     justify-content: space-between;
-    min-width: 700px;
-    max-width: 860px;
+    min-width: 800px;
+    max-width: 960px;
     background-color: #fff;
     border-radius: 10px;
 }

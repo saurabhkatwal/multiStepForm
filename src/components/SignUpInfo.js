@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./css/signup.css"
 import Buttons from './Buttons'
 export default class SignUpInfo extends Component {
+  
   render() {
     return (
       <div className="sign-up-section">
