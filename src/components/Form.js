@@ -11,9 +11,20 @@ export default class Form extends Component {
             email:'',
             address:'',
             message:'',
-            choice:'',
-            checkbox:'',
+            choice1:false,
+            choice2:false,
+            check1:false,
+            check2:false,
         images:["image1.jpg","image2.jpg","image3.jpg"]
+    }
+    formVal1=()=>{
+        if(this.state.firstName===""||this.state.lastName===""||this.state.dob===""||this.state.email===""||this.state.address===""){
+            this.setState(()=>{
+                return {
+                    page:0
+                }
+            })
+        }
     }
     prevBtnHandler=()=>{
         this.setState(prevState=>{

@@ -19,7 +19,7 @@ export default class FormContent extends Component {
             return <MessageInfo formData={this.props.formData} changeData={this.props.changeData}/>
         }
         else if(this.props.page==2){
-            return <CheckBoxInfo formData={this.props.formData}/>
+            return <CheckBoxInfo formData={this.props.formData} changeData={this.props.changeData}/>
         }
     }
     // changeState=()=>{
@@ -30,7 +30,7 @@ export default class FormContent extends Component {
   render() {
     return (
       <div className='form-content'>
-        <Header onClick={this.changeState}page={this.props.page}/>
+        <Header onClick={this.changeState} page={this.props.page}/>
         <Title title={this.state.titles[this.props.page]} page={this.props.page}/>
         <Content >{this.pageDisplay()}</Content>
         <Buttons submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>

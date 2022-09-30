@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import "./css/message.css"
 export default class MessageInfo extends Component {
-  checkValue=(e)=>{
-    return (e.target.checked)?(true):(false)
-  }
+ 
   render() {
     return (
       <div className='message-info-section'>
@@ -12,12 +10,12 @@ export default class MessageInfo extends Component {
             <textarea name="" id="" cols="30" rows="10" onChange={(e)=>this.props.changeData(e,"message",e.target.value)} value={this.props.formData.message}></textarea>
         </div>
         <div className="choices">
-            <div  onClick={(e)=>this.props.changeData(e,"choice","temp")}className="choice1 choice">
-            <input onChange={(e)=>this.checkValue(e)} type="radio" name="choice" id="choiceOne"/>
+            <div className="choice1 choice">
+            <input onChange={(this.props.formData.choice2)?((e)=>this.props.changeData(e,"choice1",false)):((e)=>this.props.changeData(e,"choice1",true))} checked={this.props.formData.choice1} type="radio" name="choice" id="choiceOne"/>
             <label htmlFor="choiceOne">The number 1 choice</label>
             </div>
             <div className="choice2 choice">
-                <input onChange={(e)=>this.checkValue(e)} type="radio" name="choice" id="choiceTwo" />
+                <input onChange={(this.props.formData.choice1)?((e)=>this.props.changeData(e,"choice2",false)):((e)=>this.props.changeData(e,"choice2",true))} checked={this.props.formData.choice2}type="radio" name="choice" id="choiceTwo" />
                 <label htmlFor="choiceTwo">The number 2 choice</label>
             </div>
         </div>

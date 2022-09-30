@@ -24,12 +24,12 @@ export default class CheckBoxInfo extends Component {
         </div>
         <div className="checkboxData">
           <div className="check1 check">
-          <input type="checkbox" name="" id="" />
-          <label htmlFor="">I want to add this option</label>
+          <input type="checkbox" name="" id="add" onChange={(e)=>this.props.changeData(e,"check1",(this.props.formData.check1)?(false):(true))} checked={this.props.formData.check1}/>
+          <label htmlFor="add">I want to add this option</label>
           </div>
           <div className="check2 check">
-            <input type="checkbox" name="" id="" />
-            <label htmlFor="">Let me click on this checkbox and choose some cool stuff</label>
+            <input type="checkbox" name="" id="choose" onChange={(e)=>this.props.changeData(e,"check2",(this.props.formData.check2)?(false):(true))} checked={this.props.formData.check2}/>
+            <label htmlFor="choose">Let me click on this checkbox and choose some cool stuff</label>
           </div>
         </div>
       </div>
