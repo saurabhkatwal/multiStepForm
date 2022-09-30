@@ -6,7 +6,7 @@ export default class MessageInfo extends Component {
       <div className='message-info-section'>
         <div className="message inputDiv">
             <label htmlFor="">Message</label>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea name="" id="" cols="30" rows="10" onChange={(e)=>this.props.changeData(e,"message",e.target.value)} value={this.props.formData.message}></textarea>
         </div>
         <div className="choices">
             <div className="choice1 choice">

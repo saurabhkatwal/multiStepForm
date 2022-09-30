@@ -6,23 +6,23 @@ export default class SignUpInfo extends Component {
       <div className="sign-up-section">
         <div className="firstName inputDiv">
         <label htmlFor="">First name</label>
-        <input type="text" value={this.props.formData.firstName}/>
+        <input type="text" onChange={(e)=>this.props.changeData(e,"firstName",e.target.value)} value={this.props.formData.firstName}/>
         </div>
         <div className="lastname inputDiv">
         <label htmlFor="">Last name</label>
-        <input type="text" value={this.props.formData.lastName}/>
+        <input type="text" onChange={(e)=>this.props.changeData(e,"lastName",e.target.value)} value={this.props.formData.lastName}/>
         </div>
         <div className="dob inputDiv">
         <label htmlFor="">Date of birth</label>
-        <input type="date" name="" id="" value={this.props.formData.dob}/>    
+        <input type="date" name="" id="" onChange={(e)=>this.props.changeData(e,"dob",e.target.value)} value={this.props.formData.dob}/>    
         </div>
         <div className="email inputDiv">
         <label htmlFor="">Email address</label>
-        <input type="date" name="" id="" value={this.props.formData.email}/>    
+        <input type="email" name="" id=""onChange={(e)=>this.props.changeData(e,"email",e.target.value)} value={this.props.formData.email}/>    
         </div>
         <div className="address inputDiv">
         <label htmlFor="">Address</label>
-        <input type="text" name="" id="" value={this.props.formData.address}/>    
+        <input type="text" name="" id=""onChange={(e)=>this.props.changeData(e,"address",e.target.value)} value={this.props.formData.address}/>    
         </div>        
       </div>
     )

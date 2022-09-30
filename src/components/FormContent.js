@@ -13,21 +13,26 @@ export default class FormContent extends Component {
     }
     pageDisplay=()=>{
         if(this.props.page==0){
-            return <SignUpInfo formData={this.props.formData} />
+            return <SignUpInfo formData={this.props.formData} changeData={this.props.changeData}/>
         }
         else if(this.props.page==1){
-            return <MessageInfo formData={this.props.formData}/>
+            return <MessageInfo formData={this.props.formData} changeData={this.props.changeData}/>
         }
         else{
             return <CheckBoxInfo formData={this.props.formData}/>
         }
     }
+    changeState=()=>{
+      this.setState(()=>{
+        return 
+      })
+    }
   render() {
     return (
       <div className='form-content'>
-        <Header page={this.props.page}/>
+        <Header onClick={this.changeState}page={this.props.page}/>
         <Title title={this.state.titles[this.props.page]} page={this.props.page}/>
-        <Content>{this.pageDisplay()}</Content>
+        <Content >{this.pageDisplay()}</Content>
         <Buttons prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>
       </div>
     )

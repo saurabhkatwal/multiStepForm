@@ -5,7 +5,6 @@ import "./css/form.css"
 export default class Form extends Component {
     state={
         page:0,
-        formData:{
             firstName:'',
             lastName:'',
             dob:'',
@@ -13,8 +12,7 @@ export default class Form extends Component {
             address:'',
             message:'',
             choice:'',
-            checkbox:''
-        },
+            checkbox:'',
         images:["image1.jpg","image2.jpg","image3.jpg"]
     }
     prevBtnHandler=()=>{
@@ -31,11 +29,21 @@ export default class Form extends Component {
             }
         })
     }
+    changeData=(e,property,value)=>{
+        console.log(e.target.value)
+        console.log(value)
+        this.setState(()=>{
+            return {
+                ...this.state.formData,
+                [property]:value
+            }
+        })
+    }
   render() {
     return (
       <div className='form'>
         <Image state={this.state}name={this.state.images[this.state.page]}/>
-        <FormContent prevBtnHandler={this.prevBtnHandler} nextBtnHandler={this.nextBtnHandler} formData={this.state.formData} page={this.state.page}/>
+        <FormContent changeData={this.changeData}state={this.state} prevBtnHandler={this.prevBtnHandler} nextBtnHandler={this.nextBtnHandler} formData={this.state} page={this.state.page}/>
       </div>
     )
   }

@@ -3,7 +3,6 @@
     justify-content: space-around;
 }
 i{
-    color: #bbb;
     cursor: pointer;
 }
 .icons{
@@ -15,3 +14,6 @@ i{
 .check input{
     margin-right: 10px;
 }
+/* i.active{
+    color:rgba(30, 143, 255, 0.774);
+} */
