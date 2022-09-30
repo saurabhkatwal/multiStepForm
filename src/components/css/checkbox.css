@@ -1,0 +1,17 @@
+.icons{
+    display: flex;
+    justify-content: space-around;
+}
+i{
+    color: #bbb;
+    cursor: pointer;
+}
+.icons{
+    margin-bottom: 20px;
+}
+.check1{
+    margin-bottom: 20px;
+}
+.check input{
+    margin-right: 10px;
+}
