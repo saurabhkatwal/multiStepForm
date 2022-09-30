@@ -16,10 +16,10 @@ export default class CheckBoxInfo extends Component {
       <div className='checkbox-info-section'>
         <div className="icons">
             <div className="icon1">
-            <i className="fa-solid fa-dice-one fa-8x active"></i>
+            <i className="fa-solid fa-dice-one fa-6x active"></i>
             </div>
             <div className="icon2">
-            <i className="fa-solid fa-dice-two fa-8x"></i>
+            <i className="fa-solid fa-dice-two fa-6x"></i>
             </div>
         </div>
         <div className="checkboxData">

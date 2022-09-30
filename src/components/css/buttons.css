@@ -1,6 +1,7 @@
 .buttons{
     display: flex;
     justify-content: flex-end;
+    padding-bottom: 0;
 }
 .buttons button{
     padding: 13px 20px;
