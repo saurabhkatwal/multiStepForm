@@ -14,6 +14,8 @@ export default class Form extends Component {
             choice:'',
             check1:false,
             check2:false,
+            dice1:false,
+            dice2:false,
             errfirstname:'',
             errlastname:'',
             errdob:'',

@@ -17,3 +17,16 @@ i{
 /* i.active{
     color:rgba(30, 143, 255, 0.774);
 } */
+.icon{
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.icon label{
+    position: absolute;
+    text-align: center;
+    transform: translate(10%,30%);
+}
+.icon input[type=checkbox]{
+    visibility: hidden;
+}

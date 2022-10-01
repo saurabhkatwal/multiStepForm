@@ -12,15 +12,33 @@ export default class CheckBoxInfo extends Component {
       }
     })
   }
+  handleCheck1=()=>{
+    if(this.props.formData.dice1){
+      this.props.changeData(null,"dice1",false);
+    }
+    else{
+      this.props.changeData(null,"dice1",true);
+    }
+  }
+  handleCheck2=()=>{
+    if(this.props.formData.dice2){
+      this.props.changeData(null,"dice2",false);
+    }
+    else{
+      this.props.changeData(null,"dice2",true);
+    }
+  }
   render() {
     return (
       <div className='checkbox-info-section'>
         <div className="icons">
-            <div className="icon1">
-            <i className="fa-solid fa-dice-one fa-6x active"></i>
+            <div className="icon1 icon">
+              <input checked={this.props.formData.dice1} onChange={this.handleCheck1}type="checkbox" name="" id="check1" />
+              <label htmlFor="check1"> <i style={(this.props.formData.dice1)?({color:'dodgerblue'}):({color:"#000"})} className="fa-solid fa-dice-one fa-4x active"></i></label>
             </div>
-            <div className="icon2">
-            <i className="fa-solid fa-dice-two fa-6x"></i>
+            <div className="icon2 icon">
+              <input checked={this.props.formData.dice2} onChange={this.handleCheck2}type="checkbox" name="" id="check2" />
+              <label htmlFor="check2"><i style={(this.props.formData.dice2)?({color:'dodgerblue'}):({color:"#000"})}className="fa-solid fa-dice-two fa-4x active"></i></label>
             </div>
         </div>
         <div className="checkboxData">
@@ -33,7 +51,8 @@ export default class CheckBoxInfo extends Component {
             <label htmlFor="choose">Let me click on this checkbox and choose some cool stuff</label>
           </div>
         </div>
-        <Buttons names={"CheckBoxInfo"} submitHandler={this.props.submitHandler} formData={this.props.formData} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>        
+        <label className="errors" htmlFor="">{this.props.formData.errdice}</label>
+        <Buttons changeData={this.props.changeData}names={"CheckBoxInfo"} inputs={["dice1,dice2"]}submitHandler={this.props.submitHandler} formData={this.props.formData} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>        
 
       </div>
     )

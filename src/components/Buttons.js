@@ -47,8 +47,18 @@ export default class Buttons extends Component {
           this.props.nextBtnHandler()
         }
       }
-      else{
-        this.props.nextBtnHandler()
+      else if(this.props.names==="CheckBoxInfo"){
+        if(this.props.formData.dice1){
+            this.props.nextBtnHandler();
+        }
+        else{
+          if(this.props.formData.dice2){
+            this.props.nextBtnHandler();
+          }
+          else{
+            this.props.changeData(null,"errdice","select at least one checkbox")
+          }
+        }
       }
     }
   render() {
