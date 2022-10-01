@@ -12,6 +12,14 @@
   height: 40vmin;
   pointer-events: none;
 }
+.modal{
+  background-color: #fff;
+  height: 400px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
