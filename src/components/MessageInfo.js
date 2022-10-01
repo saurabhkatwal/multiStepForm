@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 import "./css/message.css"
 import Buttons from './Buttons'
 export default class MessageInfo extends Component {
- 
+ generateErrors=(emptyInputs)=>{
+  console.log(emptyInputs);
+  console.log(emptyInputs)
+    emptyInputs.forEach(emptyInput=>{
+      this.props.changeData(null,"err"+emptyInput,"empty value")
+    })
+ }
   render() {
     return (
       <div className='message-info-section'>
@@ -20,7 +26,7 @@ export default class MessageInfo extends Component {
                 <label htmlFor="choiceTwo">The number 2 choice</label>
             </div>
         </div>
-        <Buttons submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>        
+        <Buttons generateErrors={this.generateErrors} names="MessageInfo" inputs={["message"]} formData={this.props.formData} submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>        
 
       </div>
     )

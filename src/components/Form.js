@@ -15,6 +15,12 @@ export default class Form extends Component {
             choice2:false,
             check1:false,
             check2:false,
+            errfirstname:'',
+            errlastname:'',
+            errdob:'',
+            erremail:'',
+            erraddress:'',
+            errmessage:'',
         images:["image1.jpg","image2.jpg","image3.jpg"]
     }
     formVal1=()=>{
@@ -41,7 +47,6 @@ export default class Form extends Component {
         })
     }
     changeData=(e,property,value)=>{
-        console.log(e.target.value)
         console.log(value)
         this.setState(()=>{
             return {
@@ -50,14 +55,14 @@ export default class Form extends Component {
             }
         })
     }
-    submitHandler(e){
-        if(e.target.innerText==="Submit"){
-            console.log("yes");
-        }
-        else{
-            console.log("no");
-        }
-      }
+    // submitHandler=(e)=>{
+    //     if(e.target.innerText==="Submit"){
+    //         console.log("yes");
+    //     }
+    //     else{
+    //         console.log("no");
+    //     }
+    //   }
   render() {
    { if(this.state.page>2){
         return (
