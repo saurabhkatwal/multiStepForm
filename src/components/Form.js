@@ -11,8 +11,7 @@ export default class Form extends Component {
             email:'',
             address:'',
             message:'',
-            choice1:false,
-            choice2:false,
+            choice:'',
             check1:false,
             check2:false,
             errfirstname:'',
@@ -21,6 +20,7 @@ export default class Form extends Component {
             erremail:'',
             erraddress:'',
             errmessage:'',
+            errchoice:'',
         images:["image1.jpg","image2.jpg","image3.jpg"]
     }
     formVal1=()=>{

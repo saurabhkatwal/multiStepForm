@@ -17,32 +17,41 @@ export default class SignUpInfo extends Component {
       this.props.changeData(null,"err"+(emptyInput).toLowerCase(),"empty value")
     })
   }
+  inputFn=(e,property,value)=>{
+    this.props.changeData(e,property,value);
+    if(e.target.value===""){
+      this.props.changeData(e,("err"+property).toLowerCase(),"empty value")
+    }
+    else{
+      this.props.changeData(e,("err"+property).toLowerCase(),"")
+    }
+  }
   render() {
     return (
       <div className="sign-up-section">
         <div className="firstName inputDiv">
         <label htmlFor="">First name</label>
-        <input type="text" onChange={(e)=>this.props.changeData(e,"firstName",e.target.value)} value={this.props.formData.firstName}/>
+        <input type="text" onChange={(e)=>{this.inputFn(e,"firstName",e.target.value)}} value={this.props.formData.firstName}/>
         <label className="errors" htmlFor="">{this.props.formData.errfirstname}</label>
         </div>
         <div className="lastname inputDiv">
         <label htmlFor="">Last name</label>
-        <input type="text" onChange={(e)=>this.props.changeData(e,"lastName",e.target.value)} value={this.props.formData.lastName}/>
+        <input type="text" onChange={(e)=>{this.inputFn(e,"lastName",e.target.value)}} value={this.props.formData.lastName}/>
         <label className="errors" htmlFor="">{this.props.formData.errlastname}</label>
         </div>
         <div className="dob inputDiv">
         <label htmlFor="">Date of birth</label>
-        <input type="date" name="" id="" onChange={(e)=>this.props.changeData(e,"dob",e.target.value)} value={this.props.formData.dob}/>    
+        <input type="date" name="" id="" onChange={(e)=>this.inputFn(e,"dob",e.target.value)} value={this.props.formData.dob}/>    
         <label className="errors" htmlFor="">{this.props.formData.errdob}</label>
         </div>
         <div className="email inputDiv">
         <label htmlFor="">Email address</label>
-        <input type="email" name="" id=""onChange={(e)=>this.props.changeData(e,"email",e.target.value)} value={this.props.formData.email}/>    
+        <input type="email" name="" id=""onChange={(e)=>this.inputFn(e,"email",e.target.value)} value={this.props.formData.email}/>    
         <label className="errors" htmlFor="">{this.props.formData.erremail}</label>
         </div>
         <div className="address inputDiv">
         <label htmlFor="">Address</label>
-        <input type="text" name="" id=""onChange={(e)=>this.props.changeData(e,"address",e.target.value)} value={this.props.formData.address}/>    
+        <input type="text" name="" id=""onChange={(e)=>this.inputFn(e,"address",e.target.value)} value={this.props.formData.address}/>    
         <label className="errors" htmlFor="">{this.props.formData.erraddress}</label>
         </div>
         <Buttons generateErrors={this.generateErrors}names={"SignUpInfo"} inputs={["firstName","lastName","email","address","dob"]} formData={this.props.formData} submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={(this.props.nextBtnHandler)} page={this.props.page}/>        

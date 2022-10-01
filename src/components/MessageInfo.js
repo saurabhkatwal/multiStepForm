@@ -9,24 +9,39 @@ export default class MessageInfo extends Component {
       this.props.changeData(null,"err"+emptyInput,"empty value")
     })
  }
+ inputFn=(e,property,value)=>{
+  this.props.changeData(e,property,value);
+  if(e.target.value===""){
+    this.props.changeData(e,("err"+property).toLowerCase(),"empty value")
+  }
+  else{
+    this.props.changeData(e,("err"+property).toLowerCase(),"")
+  }
+}
+handleChoice=(e)=>{
+this.props.changeData(e,"choice",e.target.value);
+this.props.changeData(e,"errchoice","");
+}
   render() {
     return (
       <div className='message-info-section'>
         <div className="message inputDiv">
             <label htmlFor="">Message</label>
-            <textarea name="" id="" cols="30" rows="10" onChange={(e)=>this.props.changeData(e,"message",e.target.value)} value={this.props.formData.message}></textarea>
+            <textarea name="" id="" cols="30" rows="10" onChange={(e)=>{this.inputFn(e,"message",e.target.value)}} value={this.props.formData.message}></textarea>
+            <label className="errors" htmlFor="">{this.props.formData.errmessage}</label>
         </div>
         <div className="choices">
             <div className="choice1 choice">
-            <input onChange={(this.props.formData.choice2)?((e)=>this.props.changeData(e,"choice1",false)):((e)=>this.props.changeData(e,"choice1",true))} checked={this.props.formData.choice1} type="radio" name="choice" id="choiceOne"/>
+            <input onChange={(e)=>this.handleChoice(e)} checked={this.props.formData.choice==="one"} type="radio" name="choice" id="choiceOne" value="one"/>
             <label htmlFor="choiceOne">The number 1 choice</label>
             </div>
             <div className="choice2 choice">
-                <input onChange={(this.props.formData.choice1)?((e)=>this.props.changeData(e,"choice2",false)):((e)=>this.props.changeData(e,"choice2",true))} checked={this.props.formData.choice2}type="radio" name="choice" id="choiceTwo" />
+                <input onChange={(e)=>this.handleChoice(e)} checked={this.props.formData.choice==="two"}type="radio" name="choice" id="choiceTwo" value="two" />
                 <label htmlFor="choiceTwo">The number 2 choice</label>
             </div>
         </div>
-        <Buttons generateErrors={this.generateErrors} names="MessageInfo" inputs={["message"]} formData={this.props.formData} submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>        
+        <label className="errors" htmlFor="">{this.props.formData.errchoice}</label>
+        <Buttons generateErrors={this.generateErrors} names="MessageInfo" inputs={["message","choice"]} formData={this.props.formData} submitHandler={this.props.submitHandler} prevBtnHandler={this.props.prevBtnHandler} nextBtnHandler={this.props.nextBtnHandler} page={this.props.page}/>        
 
       </div>
     )
